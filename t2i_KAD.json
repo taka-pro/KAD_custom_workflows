@@ -1,0 +1,182 @@
+{
+  "0": {
+    "inputs": {
+      "name": "Style",
+      "sampler_preset": "regular"
+    },
+    "class_type": "ETN_KritaStyle",
+    "_meta": {
+      "title": "Krita Style"
+    }
+  },
+  "1": {
+    "inputs": {
+      "name": "text",
+      "type": "prompt (positive)",
+      "default": "1girl, beautiful woman, brown long hair, hair between eyes, school uniform masterpiece, high score, great score, absurdres"
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "2": {
+    "inputs": {
+      "string_a": [
+        "1",
+        0
+      ],
+      "string_b": [
+        "0",
+        3
+      ],
+      "delimiter": ", "
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate"
+    }
+  },
+  "3": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "4": {
+    "inputs": {
+      "width": [
+        "3",
+        1
+      ],
+      "height": [
+        "3",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "\u7a7a\u306e\u6f5c\u5728\u753b\u50cf"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": [
+        "2",
+        0
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP\u30c6\u30ad\u30b9\u30c8\u30a8\u30f3\u30b3\u30fc\u30c9\uff08\u30d7\u30ed\u30f3\u30d7\u30c8\uff09"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "0",
+        4
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP\u30c6\u30ad\u30b9\u30c8\u30a8\u30f3\u30b3\u30fc\u30c9\uff08\u30d7\u30ed\u30f3\u30d7\u30c8\uff09"
+    }
+  },
+  "7": {
+    "inputs": {
+      "seed": [
+        "3",
+        3
+      ],
+      "steps": [
+        "0",
+        7
+      ],
+      "cfg": [
+        "0",
+        8
+      ],
+      "sampler_name": [
+        "0",
+        5
+      ],
+      "scheduler": [
+        "0",
+        6
+      ],
+      "denoise": 1,
+      "model": [
+        "0",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K\u30b5\u30f3\u30d7\u30e9\u30fc"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "0",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE\u30c7\u30b3\u30fc\u30c9"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "\u753b\u50cf\u3092\u4fdd\u5b58"
+    }
+  },
+  "10": {
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  }
+}
