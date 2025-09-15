@@ -28,6 +28,9 @@
   *Workflow for using WAN2.2 i2v with Krita AI Diffusion*  
   *Uses the all-in-one model below*
 
+### 解説動画 / Tutorial Video
+- 作成中 / In preparation
+
 ### 使用モデル / Models
 - WAN2.2-14B-Rapid-AllInOne  
   [Download site](https://huggingface.co/Phr00t/WAN2.2-14B-Rapid-AllInOne)
