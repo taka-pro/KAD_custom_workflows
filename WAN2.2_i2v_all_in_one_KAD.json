@@ -1,0 +1,273 @@
+{
+  "0": {
+    "inputs": {
+      "clip_name": "clip-vision_vit-h.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "CLIP\u30d3\u30b8\u30e7\u30f3\u3092\u8aad\u307f\u8fbc\u3080"
+    }
+  },
+  "1": {
+    "inputs": {
+      "name": "2. \u5165\u529b\u753b\u50cf"
+    },
+    "class_type": "ETN_KritaImageLayer",
+    "_meta": {
+      "title": "Krita Image Layer"
+    }
+  },
+  "2": {
+    "inputs": {
+      "name": "3. \u5e45",
+      "type": "number (integer)",
+      "default": 640,
+      "min": 16,
+      "max": 16384
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "3": {
+    "inputs": {
+      "name": "4. \u9ad8\u3055",
+      "type": "number (integer)",
+      "default": 640,
+      "min": 16,
+      "max": 16384
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "4": {
+    "inputs": {
+      "name": "1. \u30e2\u30c7\u30eb\u540d",
+      "type": "choice",
+      "default": "wan2.2-i2v-rapid-aio-v10.safetensors"
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "5": {
+    "inputs": {
+      "name": "5. \u30d7\u30ed\u30f3\u30d7\u30c8",
+      "type": "prompt (positive)",
+      "default": ""
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "6": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "7": {
+    "inputs": {
+      "ckpt_name": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "\u30c1\u30a7\u30c3\u30af\u30dd\u30a4\u30f3\u30c8\u3092\u8aad\u307f\u8fbc\u3080"
+    }
+  },
+  "8": {
+    "inputs": {
+      "shift": 8.000000000000002,
+      "model": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingSD3",
+    "_meta": {
+      "title": "\u30e2\u30c7\u30eb\u30b5\u30f3\u30d7\u30ea\u30f3\u30b0SD3"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "7",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Negative (leave blank)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "text": [
+        "5",
+        0
+      ],
+      "clip": [
+        "7",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive Input"
+    }
+  },
+  "11": {
+    "inputs": {
+      "crop": "center",
+      "clip_vision": [
+        "0",
+        0
+      ],
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP\u30d3\u30b8\u30e7\u30f3\u30a8\u30f3\u30b3\u30fc\u30c9"
+    }
+  },
+  "12": {
+    "inputs": {
+      "width": [
+        "2",
+        0
+      ],
+      "height": [
+        "3",
+        0
+      ],
+      "length": 81,
+      "batch_size": 1,
+      "positive": [
+        "10",
+        0
+      ],
+      "negative": [
+        "9",
+        0
+      ],
+      "vae": [
+        "7",
+        2
+      ],
+      "clip_vision_output": [
+        "11",
+        0
+      ],
+      "start_image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "WanImageToVideo",
+    "_meta": {
+      "title": "Wan\u753b\u50cf\u304b\u3089\u30d3\u30c7\u30aa\u3078"
+    }
+  },
+  "13": {
+    "inputs": {
+      "seed": [
+        "6",
+        3
+      ],
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "8",
+        0
+      ],
+      "positive": [
+        "12",
+        0
+      ],
+      "negative": [
+        "12",
+        1
+      ],
+      "latent_image": [
+        "12",
+        2
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K\u30b5\u30f3\u30d7\u30e9\u30fc"
+    }
+  },
+  "14": {
+    "inputs": {
+      "samples": [
+        "13",
+        0
+      ],
+      "vae": [
+        "7",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE\u30c7\u30b3\u30fc\u30c9"
+    }
+  },
+  "15": {
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  },
+  "16": {
+    "inputs": {
+      "fps": 16,
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "\u52d5\u753b\u3092\u4f5c\u6210"
+    }
+  },
+  "17": {
+    "inputs": {
+      "filename_prefix": "video/ComfyUI",
+      "format": "auto",
+      "codec": "auto",
+      "video": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "\u30d3\u30c7\u30aa\u3092\u4fdd\u5b58"
+    }
+  }
+}
