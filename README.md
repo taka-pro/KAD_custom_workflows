@@ -29,7 +29,7 @@
   *Uses the all-in-one model below*
 
 ### 解説動画 / Tutorial Video
-- 作成中 / In preparation
+- [Krita AI DiffusionとWAN2.2で快適動画生成 ：カスタムグラフで画像から動画生成　完全解説](https://youtu.be/NyBXv8MM4QU)
 
 ### 使用モデル / Models
 - WAN2.2-14B-Rapid-AllInOne  
