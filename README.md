@@ -37,3 +37,18 @@
 
 - clip_vision_vit_h.safetensors  
   [Download site](https://huggingface.co/lllyasviel/misc/tree/main)
+
+## Anytest_Region_KAD.json
+- AnytestとRegionを組み合わせて、**スケッチのレイアウトを反映しつつ、領域ごとに別のプロンプトを適用できるワークフロー**  
+- 複数キャラクターの描き分けや、背景と人物の差異を明確にしたい場合に有効  
+*Workflow for combining Anytest with Region support in Krita AI Diffusion.  
+Allows sketch layout control with region-specific prompts for multi-character compositions.*
+
+### 解説動画 / Tutorial Video
+- Krita AI Diffusion カスタムグラフ上級講座：Anytest × Regionを組み合わせた画像生成  
+  ※ 公開準備中
+
+### 使用モデル / Model
+- ControlNet "Anytest"  
+  [Download site](https://huggingface.co/2vXpSwA7/iroiro-lora/tree/main/test_controlnet2)
+
