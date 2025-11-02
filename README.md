@@ -45,8 +45,7 @@
 Allows sketch layout control with region-specific prompts for multi-character compositions.*
 
 ### 解説動画 / Tutorial Video
-- Krita AI Diffusion カスタムグラフ上級講座：Anytest × Regionを組み合わせた画像生成  
-  ※ 公開準備中
+- [Krita AI Diffusion カスタムグラフ上級講座：Anytest × Regionを組み合わせた画像生成](https://youtu.be/Zja_1BJppE4) 
 
 ### 使用モデル / Model
 - ControlNet "Anytest"  
