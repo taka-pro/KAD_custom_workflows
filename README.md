@@ -50,3 +50,10 @@ Allows sketch layout control with region-specific prompts for multi-character co
 ### 使用モデル / Model
 - ControlNet "Anytest"  
   [Download site](https://huggingface.co/2vXpSwA7/iroiro-lora/tree/main/test_controlnet2)
+
+## CN_KAD_REGION3.json
+- AnytestとRegionを組み合わせた**3領域対応版ワークフロー**  
+- **CN_KAD_REGION.json（2 Region版）をベースに拡張**し、キャンバスを3つの領域に分けて**領域ごとに個別のプロンプトを適用可能**  
+- 複数キャラクター構成や、人物・背景・小物など**役割が異なるパーツを明確に描き分けたい場合に有効**  
+*Workflow for combining Anytest with 3-region prompt control in Krita AI Diffusion.  
+Allows region-specific prompts for multi-character or multi-element compositions.*
