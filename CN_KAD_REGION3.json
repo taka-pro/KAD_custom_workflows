@@ -1,0 +1,619 @@
+{
+  "0": {
+    "inputs": {
+      "name": "1. Style",
+      "sampler_preset": "auto"
+    },
+    "class_type": "ETN_KritaStyle",
+    "_meta": {
+      "title": "Krita Style"
+    }
+  },
+  "1": {
+    "inputs": {
+      "name": "10. Base Prompt",
+      "type": "text",
+      "default": ""
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "2": {
+    "inputs": {
+      "name": "4. \u53c2\u7167\u753b\u50cf"
+    },
+    "class_type": "ETN_KritaImageLayer",
+    "_meta": {
+      "title": "Krita Image Layer"
+    }
+  },
+  "3": {
+    "inputs": {
+      "name": "3. CN Model",
+      "type": "choice",
+      "default": "CN-anytest4_animagine4_A.safetensors"
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "4": {
+    "inputs": {},
+    "class_type": "ETN_KritaCanvas",
+    "_meta": {
+      "title": "Krita Canvas"
+    }
+  },
+  "5": {
+    "inputs": {
+      "name": "5. \u5f37\u5ea6",
+      "type": "number",
+      "default": 1,
+      "min": 0,
+      "max": 1.5
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "6": {
+    "inputs": {
+      "name": "6. \u958b\u59cb\u30d1\u30fc\u30bb\u30f3\u30c8",
+      "type": "number",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "7": {
+    "inputs": {
+      "name": "7. \u7d42\u4e86\u30d1\u30fc\u30bb\u30f3\u30c8",
+      "type": "number",
+      "default": 1,
+      "min": 0,
+      "max": 1
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "8": {
+    "inputs": {
+      "width": [
+        "4",
+        1
+      ],
+      "height": [
+        "4",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "\u7a7a\u306e\u6f5c\u5728\u753b\u50cf"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": [
+        "0",
+        4
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP\u30c6\u30ad\u30b9\u30c8\u30a8\u30f3\u30b3\u30fc\u30c9\uff08\u30d7\u30ed\u30f3\u30d7\u30c8\uff09"
+    }
+  },
+  "10": {
+    "inputs": {
+      "control_net_name": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "ControlNet\u30e2\u30c7\u30eb\u3092\u8aad\u307f\u8fbc\u3080"
+    }
+  },
+  "11": {
+    "inputs": {
+      "name": "12. Region1"
+    },
+    "class_type": "ETN_KritaImageLayer",
+    "_meta": {
+      "title": "Krita Image Layer"
+    }
+  },
+  "12": {
+    "inputs": {
+      "name": "14. Region2"
+    },
+    "class_type": "ETN_KritaImageLayer",
+    "_meta": {
+      "title": "Krita Image Layer"
+    }
+  },
+  "13": {
+    "inputs": {
+      "name": "11. BG Prompt",
+      "type": "text",
+      "default": ""
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "14": {
+    "inputs": {
+      "name": "13. Region1 Prompt",
+      "type": "text",
+      "default": ""
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "15": {
+    "inputs": {
+      "name": "15. Region2 Prompt",
+      "type": "text",
+      "default": ""
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "16": {
+    "inputs": {
+      "string_a": [
+        "1",
+        0
+      ],
+      "string_b": [
+        "13",
+        0
+      ],
+      "delimiter": ", "
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate"
+    }
+  },
+  "17": {
+    "inputs": {
+      "string_a": [
+        "1",
+        0
+      ],
+      "string_b": [
+        "14",
+        0
+      ],
+      "delimiter": ", "
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate"
+    }
+  },
+  "18": {
+    "inputs": {
+      "string_a": [
+        "1",
+        0
+      ],
+      "string_b": [
+        "15",
+        0
+      ],
+      "delimiter": ", "
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate"
+    }
+  },
+  "19": {
+    "inputs": {
+      "string_a": [
+        "16",
+        0
+      ],
+      "string_b": [
+        "0",
+        3
+      ],
+      "delimiter": ", "
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate"
+    }
+  },
+  "20": {
+    "inputs": {
+      "string_a": [
+        "17",
+        0
+      ],
+      "string_b": [
+        "0",
+        3
+      ],
+      "delimiter": ", "
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate"
+    }
+  },
+  "21": {
+    "inputs": {
+      "string_a": [
+        "18",
+        0
+      ],
+      "string_b": [
+        "0",
+        3
+      ],
+      "delimiter": ", "
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate"
+    }
+  },
+  "22": {
+    "inputs": {
+      "text": [
+        "20",
+        0
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP\u30c6\u30ad\u30b9\u30c8\u30a8\u30f3\u30b3\u30fc\u30c9\uff08\u30d7\u30ed\u30f3\u30d7\u30c8\uff09"
+    }
+  },
+  "23": {
+    "inputs": {
+      "text": [
+        "21",
+        0
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP\u30c6\u30ad\u30b9\u30c8\u30a8\u30f3\u30b3\u30fc\u30c9\uff08\u30d7\u30ed\u30f3\u30d7\u30c8\uff09"
+    }
+  },
+  "24": {
+    "inputs": {
+      "text": [
+        "19",
+        0
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP\u30c6\u30ad\u30b9\u30c8\u30a8\u30f3\u30b3\u30fc\u30c9\uff08\u30d7\u30ed\u30f3\u30d7\u30c8\uff09"
+    }
+  },
+  "25": {
+    "inputs": {
+      "strength": [
+        "5",
+        0
+      ],
+      "start_percent": [
+        "6",
+        0
+      ],
+      "end_percent": [
+        "7",
+        0
+      ],
+      "positive": [
+        "24",
+        0
+      ],
+      "negative": [
+        "9",
+        0
+      ],
+      "control_net": [
+        "10",
+        0
+      ],
+      "image": [
+        "2",
+        0
+      ],
+      "vae": [
+        "0",
+        2
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "ControlNet\u3092\u9069\u7528"
+    }
+  },
+  "26": {
+    "inputs": {
+      "conditioning": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "ETN_BackgroundRegion",
+    "_meta": {
+      "title": "Background Region"
+    }
+  },
+  "27": {
+    "inputs": {
+      "mask": [
+        "11",
+        1
+      ],
+      "conditioning": [
+        "22",
+        0
+      ],
+      "regions": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "ETN_DefineRegion",
+    "_meta": {
+      "title": "Define Region"
+    }
+  },
+  "28": {
+    "inputs": {
+      "mask": [
+        "12",
+        1
+      ],
+      "conditioning": [
+        "23",
+        0
+      ],
+      "regions": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "ETN_DefineRegion",
+    "_meta": {
+      "title": "Define Region"
+    }
+  },
+  "29": {
+    "inputs": {
+      "name": "16. Region3"
+    },
+    "class_type": "ETN_KritaImageLayer",
+    "_meta": {
+      "title": "Krita Image Layer"
+    }
+  },
+  "30": {
+    "inputs": {
+      "name": "17. Region3 Prompt",
+      "type": "text",
+      "default": ""
+    },
+    "class_type": "ETN_Parameter",
+    "_meta": {
+      "title": "Parameter"
+    }
+  },
+  "31": {
+    "inputs": {
+      "string_a": [
+        "1",
+        0
+      ],
+      "string_b": [
+        "30",
+        0
+      ],
+      "delimiter": ", "
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate"
+    }
+  },
+  "32": {
+    "inputs": {
+      "string_a": [
+        "31",
+        0
+      ],
+      "string_b": [
+        "0",
+        3
+      ],
+      "delimiter": ", "
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate"
+    }
+  },
+  "33": {
+    "inputs": {
+      "text": [
+        "32",
+        0
+      ],
+      "clip": [
+        "0",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP\u30c6\u30ad\u30b9\u30c8\u30a8\u30f3\u30b3\u30fc\u30c9\uff08\u30d7\u30ed\u30f3\u30d7\u30c8\uff09"
+    }
+  },
+  "34": {
+    "inputs": {
+      "mask": [
+        "29",
+        1
+      ],
+      "conditioning": [
+        "33",
+        0
+      ],
+      "regions": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "ETN_DefineRegion",
+    "_meta": {
+      "title": "Define Region"
+    }
+  },
+  "35": {
+    "inputs": {
+      "model": [
+        "0",
+        0
+      ],
+      "regions": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "ETN_AttentionMask",
+    "_meta": {
+      "title": "Regions Attention Mask"
+    }
+  },
+  "36": {
+    "inputs": {
+      "seed": [
+        "4",
+        3
+      ],
+      "steps": [
+        "0",
+        7
+      ],
+      "cfg": [
+        "0",
+        8
+      ],
+      "sampler_name": [
+        "0",
+        5
+      ],
+      "scheduler": [
+        "0",
+        6
+      ],
+      "denoise": 1,
+      "model": [
+        "35",
+        0
+      ],
+      "positive": [
+        "25",
+        0
+      ],
+      "negative": [
+        "25",
+        1
+      ],
+      "latent_image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K\u30b5\u30f3\u30d7\u30e9\u30fc"
+    }
+  },
+  "37": {
+    "inputs": {
+      "samples": [
+        "36",
+        0
+      ],
+      "vae": [
+        "0",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE\u30c7\u30b3\u30fc\u30c9"
+    }
+  },
+  "38": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "\u753b\u50cf\u3092\u4fdd\u5b58"
+    }
+  },
+  "39": {
+    "inputs": {
+      "images": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "ETN_KritaOutput",
+    "_meta": {
+      "title": "Krita Output"
+    }
+  }
+}
